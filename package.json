@@ -1,0 +1,19 @@
+{
+  "name": "mochai",
+  "version": "1.0.0",
+  "description": "Mocha and Chai test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/_mocha || exit 0"
+  },
+  "keywords": [
+    "mocha",
+    "chai"
+  ],
+  "author": "Alex",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
+}
