@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const user = require('../users')
+const user = require('../user')
 
 describe('Async function test', function () {
     it('Should return the correct user data for a valid user ID', async function () {
@@ -10,6 +10,16 @@ describe('Async function test', function () {
         expect(userData.name).to.equal('Leanne Graham')
         expect(userData).to.have.property('email')
         expect(userData.email).to.equal('Sincere@april.biz')
+    })
+
+    // Chain together multiple assertions
+
+    it('Should return user data for a valid user ID', async function () {
+        const userData = await user.fetchUserData(1)
+        expect(userData).to.be.an('object')
+            .that.has.property('id')
+            .that.is.a('number')
+            .that.equals(1)
     })
 
     it('Should return an object with a non-empty company property', async function () {
